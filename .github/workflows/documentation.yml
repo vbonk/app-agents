@@ -1,0 +1,59 @@
+name: Documentation Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Check README files exist
+      run: |
+        # Check main README
+        if [ ! -f README.md ]; then
+          echo "Main README.md is missing"
+          exit 1
+        fi
+        
+        # Check agent READMEs
+        for agent_dir in agents/*/; do
+          if [ -d "$agent_dir" ] && [ ! -f "${agent_dir}README.md" ]; then
+            echo "README.md is missing in $agent_dir"
+            exit 1
+          fi
+        done
+        
+        echo "All required README files are present"
+    
+    - name: Validate markdown files
+      run: |
+        # Basic markdown validation
+        find . -name "*.md" -type f | while read file; do
+          echo "Checking $file"
+          # Check for basic markdown syntax issues
+          if grep -q "^\[.*\]($" "$file"; then
+            echo "Warning: Potential broken link in $file"
+          fi
+        done
+        
+        echo "Markdown validation completed"
+    
+    - name: Check directory structure
+      run: |
+        # Verify expected directory structure
+        required_dirs=("agents" "docs" "shared" "examples")
+        
+        for dir in "${required_dirs[@]}"; do
+          if [ ! -d "$dir" ]; then
+            echo "Required directory $dir is missing"
+            exit 1
+          fi
+        done
+        
+        echo "Directory structure validation passed"
