@@ -1,6 +1,8 @@
 # App Agents Repository
 
-This repository is a centralized hub for managing multiple AI agents. It provides a structured framework for developing, documenting, and deploying agents, with a focus on shared infrastructure and agent-specific implementations.
+**A Centralized Hub for AI Agent Development and Management**
+
+This repository provides a structured framework for developing, documenting, and deploying multiple AI agents. Each agent is designed to excel in specific domains while leveraging shared infrastructure and best practices for consistency and maintainability.
 
 ## Repository Structure
 
@@ -28,10 +30,60 @@ app-agents/
 
 ### Key Directories
 
-*   **`agents/`**: This is where the source code and specific documentation for each individual agent reside. Each agent has its own subdirectory, which allows for clear separation of concerns and makes it easy to manage individual agents.
-*   **`docs/`**: This directory contains general documentation that applies to the entire repository, as well as the detailed documentation for the web crawling and research system.
-*   **`shared/`**: This directory contains tools, configurations, and data schemas that are shared across all agents. This promotes code reuse and consistency.
-*   **`examples/`**: This directory provides examples of how to use the agents and shared tools.
+*   **`agents/`**: Individual agent implementations with dedicated source code, documentation, and configuration files
+*   **`docs/`**: General documentation, templates, and shared resources for agent development
+*   **`shared/`**: Common tools, configurations, and schemas used across all agents
+*   **`examples/`**: Usage examples and implementation patterns for agents and shared tools
+
+## 🤖 Available Agents
+
+This repository currently contains the following specialized AI agents:
+
+### Agent Builder
+- **Use Cases**: Interface design, User experience optimization, Accessibility auditing
+
+### Crawler
+**The Crawler Agent is a specialized agent designed to systematically crawl websites and extract de...**
+
+- **Description**: The Crawler Agent is a specialized agent designed to systematically crawl websites and extract detailed information about software applications. It uses a comprehensive research and analysis framework to build a structured knowledge base that can be used to train other AI agents.
+- **Dataset(s)**:
+  - `sample_crawl_database.xlsx` (XLSX) - Example data structure and format
+- **Use Cases**: Web scraping, Data extraction, Competitive analysis, Interface design, User experience optimization
+
+### Ui Architect
+**The UI-Architect-Agent is a sophisticated AI assistant that provides expert guidance on modern UI...**
+
+- **Description**: The UI-Architect-Agent is a sophisticated AI assistant that provides expert guidance on modern UI/UX design principles, patterns, and best practices. Built on comprehensive research from industry leaders including Material Design, Nielsen Norman Group, and leading design publications, it evaluates designs across eight critical dimensions and provides evidence-based recommendations for creating effective user interfaces.
+- **Special Functions**:
+  - Interactive Prompt Refinement: Engages users in dialogue to clarify requirements and ensure comprehensive understanding of design challenges
+  - Multi-dimensional Design Analysis: Evaluates proposals against Sentiment, Usability, Aesthetics, Value, Accuracy, Utility, Form, and Function dimensions
+  - Evidence-Based Recommendations: Provides specific guidance based on curated knowledge base of modern UI/UX principles
+  - Component Code Generation: Creates production-ready boilerplate code for common UI components in popular frameworks
+  - Accessibility Auditing: Evaluates designs for WCAG compliance and inclusive design practices
+  - Data Visualization Guidance: Recommends appropriate chart types and visualization patterns based on data characteristics
+- **Dataset(s)**:
+  - `ui_ux_research_dataset.xlsx` (XLSX) - Comprehensive research database
+- **Use Cases**: Interface design, User experience optimization, Accessibility auditing, System design, Architecture planning
+
+## 🎯 Agent Categories
+
+Our agents are organized into specialized categories:
+
+| Category | Agents | Focus Area |
+|----------|--------|------------|
+| **Research & Analysis** | Crawler, Ui Architect Agent | Web crawling, data extraction, competitive analysis |
+| **Design & UX** | Agent Builder | Interface design, user experience, accessibility |
+| **Development** | *Coming Soon* | Code generation, architecture guidance, testing |
+| **Content & Communication** | *Coming Soon* | Content creation, documentation, technical writing |
+## 📊 Agent Performance Metrics
+
+Each agent includes comprehensive performance tracking:
+
+- **Recommendation Accuracy**: How well suggestions align with user needs and industry standards
+- **Implementation Success**: Percentage of generated outputs that work without modification  
+- **Domain Expertise**: Depth and breadth of knowledge in specialized areas
+- **User Satisfaction**: Feedback scores on recommendation quality and usefulness
+- **Compliance Standards**: Adherence to accessibility, security, and best practice guidelines
 
 ## Getting Started
 
