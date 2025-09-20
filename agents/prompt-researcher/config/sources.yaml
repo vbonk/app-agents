@@ -1,0 +1,42 @@
+github:
+  enabled: true
+  max_results: 20
+  metadata_fields:
+  - stars
+  - forks
+  - language
+  - updated_at
+  - topics
+  name: GitHub
+  priority: HIGH
+  quality_weight: 0.9
+  rate_limit: 60
+  search_parameters:
+    order: desc
+    sort: stars
+reddit:
+  enabled: true
+  max_results: 15
+  metadata_fields:
+  - subreddit
+  - score
+  - num_comments
+  - author
+  name: Reddit
+  priority: MEDIUM
+  quality_weight: 0.6
+  rate_limit: 60
+  search_parameters:
+    sort: relevance
+    t: all
+web:
+  enabled: true
+  max_results: 15
+  metadata_fields:
+  - source_name
+  - type
+  name: Web Search
+  priority: MEDIUM
+  quality_weight: 0.7
+  rate_limit: 30
+  search_parameters: {}

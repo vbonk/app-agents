@@ -1,0 +1,51 @@
+market_research:
+  analysis_dimensions:
+  - market_size
+  - competition
+  - trends
+  - opportunities
+  description: Market analysis and competitive intelligence
+  enrichment_strategies:
+  - competitive_analysis
+  - market_sizing
+  - trend_identification
+  name: Market Research
+  quality_thresholds:
+    high_quality_score: 0.8
+    minimum_score: 0.5
+  research_type: MARKET_RESEARCH
+  scoring_weights:
+    authority: 0.3
+    completeness: 0.0
+    engagement: 0.1
+    recency: 0.25
+    relevance: 0.35
+  sources:
+  - web
+  - reddit
+technology_analysis:
+  analysis_dimensions:
+  - popularity
+  - recency
+  - authority
+  - community_engagement
+  description: Comprehensive analysis of technologies, frameworks, and tools
+  enrichment_strategies:
+  - cross_reference_validation
+  - trend_analysis
+  - community_sentiment
+  name: Technology Analysis
+  quality_thresholds:
+    high_quality_score: 0.7
+    minimum_score: 0.4
+  research_type: TECHNOLOGY_ANALYSIS
+  scoring_weights:
+    authority: 0.25
+    completeness: 0.1
+    engagement: 0.15
+    recency: 0.2
+    relevance: 0.3
+  sources:
+  - github
+  - web
+  - reddit
