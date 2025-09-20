@@ -1,0 +1,76 @@
+name: Update README with Agent Information
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'agents/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'agents/**'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml pandas openpyxl
+
+    - name: Update README with agent information
+      run: |
+        python .github/scripts/update_readme.py
+
+    - name: Check for changes
+      id: verify-changed-files
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit and push changes
+      if: steps.verify-changed-files.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m "docs: auto-update README with latest agent information
+
+        - Updated agent list and descriptions
+        - Refreshed performance metrics and capabilities
+        - Synchronized with current repository state
+        
+        [skip ci]"
+        git push
+
+    - name: Create summary
+      run: |
+        echo "## README Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [ "${{ steps.verify-changed-files.outputs.changed }}" == "true" ]; then
+          echo "✅ README.md has been updated with latest agent information" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Changes Made:" >> $GITHUB_STEP_SUMMARY
+          echo "- Refreshed agent list and descriptions" >> $GITHUB_STEP_SUMMARY
+          echo "- Updated performance metrics" >> $GITHUB_STEP_SUMMARY
+          echo "- Synchronized agent categories" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "ℹ️ No changes needed - README.md is already up to date" >> $GITHUB_STEP_SUMMARY
+        fi
