@@ -50,6 +50,12 @@ This repository currently contains the following specialized AI agents:
   - `sample_crawl_database.xlsx` (XLSX) - Example data structure and format
 - **Use Cases**: Web scraping, Data extraction, Competitive analysis, Interface design, User experience optimization
 
+### Prompt Researcher
+**The Prompt-Researcher Agent is a sophisticated research automation system that conducts comprehen...**
+
+- **Description**: The Prompt-Researcher Agent is a sophisticated research automation system that conducts comprehensive multi-source research with advanced learning capabilities. It combines intelligent data collection, persistent memory, and iterative improvement to provide high-quality research datasets and insights.
+- **Use Cases**: Research analysis, Data synthesis
+
 ### Ui Architect
 **The UI-Architect-Agent is a sophisticated AI assistant that provides expert guidance on modern UI...**
 
@@ -61,8 +67,6 @@ This repository currently contains the following specialized AI agents:
   - Component Code Generation: Creates production-ready boilerplate code for common UI components in popular frameworks
   - Accessibility Auditing: Evaluates designs for WCAG compliance and inclusive design practices
   - Data Visualization Guidance: Recommends appropriate chart types and visualization patterns based on data characteristics
-- **Dataset(s)**:
-  - `ui_ux_research_dataset.xlsx` (XLSX) - Comprehensive research database
 - **Use Cases**: Interface design, User experience optimization, Accessibility auditing, System design, Architecture planning
 
 ## 🎯 Agent Categories
@@ -71,7 +75,7 @@ Our agents are organized into specialized categories:
 
 | Category | Agents | Focus Area |
 |----------|--------|------------|
-| **Research & Analysis** | Crawler, Ui Architect Agent | Web crawling, data extraction, competitive analysis |
+| **Research & Analysis** | Prompt Researcher, Crawler, Ui Architect Agent | Web crawling, data extraction, competitive analysis |
 | **Design & UX** | Agent Builder | Interface design, user experience, accessibility |
 | **Development** | *Coming Soon* | Code generation, architecture guidance, testing |
 | **Content & Communication** | *Coming Soon* | Content creation, documentation, technical writing |
