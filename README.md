@@ -185,6 +185,7 @@ Each agent includes comprehensive performance tracking across standardized metri
    python enhanced_crawler_agent.py
    ```
 
+<<<<<<< HEAD
 ### Creating a New Agent
 
 1. **Use the Agent-Builder**:
@@ -368,6 +369,12 @@ We welcome contributions to the app-agents repository. Please follow these guide
 - **GitHub Issues**: Bug reports and feature requests
 - **GitHub Discussions**: Community questions and support
 - **Performance Monitoring**: Built-in health checks and diagnostics
+
+## Services
+
+This repository also includes backend services that support the functionality of the AI agents.
+
+* [Constitution Service](./services/constitution-service/README.md): Manages the constitutions that govern the behavior of AI agents.
 
 ### Community Resources
 
