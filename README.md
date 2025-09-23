@@ -20,7 +20,7 @@ All agents in this repository adhere to comprehensive standards that ensure:
 
 ### Core Requirements
 - **Multi-Source Research**: Ability to gather information from web, databases, APIs, and files
-- **Persistent Memory**: SQLite-based memory system with learning capabilities
+- **Persistent Memory**: Prisma ORM Postgres memory system with learning capabilities
 - **Iterative Dataset Enrichment**: Continuous improvement of knowledge bases
 - **Prompt Optimization**: Automatic prompt refinement based on performance data
 - **Tool Awareness**: Dynamic tool discovery and intelligent tool selection
