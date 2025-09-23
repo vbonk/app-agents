@@ -6,7 +6,7 @@ pandas==2.2.2
 numpy==1.26.4
 
 # Web requests
-requests==2.31.0
+requests==2.32.4
 aiohttp==3.9.5
 
 # Data formats
