@@ -19,6 +19,7 @@ The app-agents repository is built to integrate with the SaaS Architecture ecosy
 All agents in this repository adhere to comprehensive standards that ensure:
 
 ### Core Requirements
+
 - **Multi-Source Research**: Ability to gather information from web, databases, APIs, and files
 - **Persistent Memory**: SQLite-based memory system with learning capabilities
 - **Iterative Dataset Enrichment**: Continuous improvement of knowledge bases
@@ -27,6 +28,7 @@ All agents in this repository adhere to comprehensive standards that ensure:
 - **Data Versatility**: Support for multiple formats (JSON, YAML, XML, CSV, Markdown, PostgreSQL, Vector)
 
 ### SaaS Integration Features
+
 - **Multi-Tenancy**: Row-level security and tenant data isolation
 - **API Endpoints**: Standardized REST APIs for external integration
 - **Database Schema**: Prisma ORM integration with comprehensive data models
@@ -34,6 +36,7 @@ All agents in this repository adhere to comprehensive standards that ensure:
 - **Security Compliance**: OAuth 2.0, data encryption, and audit logging
 
 ### Quality Assurance
+
 - **Best Practices Alignment**: Incorporates guidelines from OpenAI, Anthropic, Google AI, and GitHub
 - **Comprehensive Testing**: Unit tests, integration tests, and performance benchmarks
 - **Documentation Standards**: Complete agents.md specifications and usage guides
@@ -48,97 +51,85 @@ app-agents/
 ├── .github/                # GitHub-specific files (workflows, issue templates)
 │   ├── workflows/          # CI/CD workflows including README automation
 │   └── scripts/            # Automation scripts for repository maintenance
-├── agents/                 # Contains individual agent implementations
-│   └── [agent_name]/       # Each agent has its own directory
-│       ├── src/            # Source code for the agent
-│       ├── docs/           # Agent-specific documentation and datasets
-│       ├── tests/          # Comprehensive test suites
-│       ├── config/         # Agent-specific configuration files
-│       ├── examples/       # Usage examples and demonstrations
-│       └── agents.md       # Agent specification document
-├── docs/                   # General documentation for the repository
-│   ├── crawling-system/    # Documentation for the web crawling and research system
-│   ├── templates/          # Documentation templates for agents
-│   └── readme-automation.md # README automation system documentation
-├── examples/               # Example usage of agents and shared tools
+├── agents/                 # Agent implementations organized by category
+│   ├── registry.json       # Machine-readable agent catalog
+│   ├── support/            # Development support agents
+│   │   ├── agent-builder/  # Agent creation framework
+│   │   └── ui-architect-agent/ # UI/UX design assistant
+│   ├── strategic/          # Strategic planning agents
+│   │   └── prompt-researcher/ # Prompt engineering research
+│   ├── operational/        # Operational automation agents
+│   │   └── crawler/        # Web crawling and data extraction
+│   └── [category]/         # Additional agent categories
+├── docs/                   # Documentation and standards
+│   ├── agents/             # Detailed agent documentation by category
+│   ├── agent-organization-standards.md # Organization standards
+│   ├── readme-automation.md # README automation system
+│   ├── saasarch-alignment.md # SaaS Architecture alignment
+│   └── templates/          # Documentation templates
 ├── shared/                 # Shared resources for all agents
 │   ├── standards/          # Agent standards and specifications
 │   ├── schemas/            # Database schemas and API specifications
 │   ├── templates/          # Enhanced agent base classes and templates
 │   ├── tools/              # Shared scripts and tools
 │   └── configs/            # Shared configuration files
+├── scripts/                # Repository management scripts
+├── codex/                  # Session artifacts and audit reports
+├── manus/                  # Research data and artifacts
 └── README.md               # This file
 ```
 
 ### Key Directories
 
-- **`agents/`**: Individual agent implementations with dedicated source code, documentation, and configuration files
+- **`agents/`**: Agent implementations organized by category subdirectories for better discoverability
+- **`docs/agents/`**: Detailed documentation for each agent organized by category
+- **`docs/agent-organization-standards.md`**: Standards for agent directory organization
 - **`shared/standards/`**: Comprehensive agent standards and specifications for consistent development
 - **`shared/schemas/`**: Prisma database schemas and API specifications for SaaS integration
 - **`shared/templates/`**: Enhanced base classes and templates for rapid agent development
-- **`docs/`**: General documentation, templates, and shared resources for agent development
-- **`examples/`**: Usage examples and implementation patterns for agents and shared tools
+- **`scripts/`**: Repository management and automation scripts including cross-repository validation
 
 ## 🤖 Available Agents
 
 This repository currently contains the following specialized AI agents:
 
-### Agent Builder
-- **Use Cases**: Interface design, User experience optimization, Accessibility auditing
+### Operational
 
-### Crawler
-**The Crawler Agent is a specialized agent designed to systematically crawl websites and extract de...**
+### Strategic
 
-- **Description**: The Crawler Agent is a specialized agent designed to systematically crawl websites and extract detailed information about software applications. It uses a comprehensive research and analysis framework to build a structured knowledge base that can be used to train other AI agents.
-- **Dataset(s)**:
-  - `sample_crawl_database.xlsx` (XLSX) - Example data structure and format
-- **Use Cases**: Web scraping, Data extraction, Competitive analysis, Interface design, User experience optimization
-
-### Prompt Researcher
-**The Prompt-Researcher Agent is a sophisticated research automation system that conducts comprehen...**
-
-- **Description**: The Prompt-Researcher Agent is a sophisticated research automation system that conducts comprehensive multi-source research with advanced learning capabilities. It combines intelligent data collection, persistent memory, and iterative improvement to provide high-quality research datasets and insights.
-- **Use Cases**: Research analysis, Data synthesis
-
-### Ui Architect
-**The UI-Architect-Agent is a sophisticated AI assistant that provides expert guidance on modern UI...**
-
-- **Description**: The UI-Architect-Agent is a sophisticated AI assistant that provides expert guidance on modern UI/UX design principles, patterns, and best practices. Built on comprehensive research from industry leaders including Material Design, Nielsen Norman Group, and leading design publications, it evaluates designs across eight critical dimensions and provides evidence-based recommendations for creating effective user interfaces.
-- **Special Functions**:
-  - Interactive Prompt Refinement: Engages users in dialogue to clarify requirements and ensure comprehensive understanding of design challenges
-  - Multi-dimensional Design Analysis: Evaluates proposals against Sentiment, Usability, Aesthetics, Value, Accuracy, Utility, Form, and Function dimensions
-  - Evidence-Based Recommendations: Provides specific guidance based on curated knowledge base of modern UI/UX principles
-  - Component Code Generation: Creates production-ready boilerplate code for common UI components in popular frameworks
-  - Accessibility Auditing: Evaluates designs for WCAG compliance and inclusive design practices
-  - Data Visualization Guidance: Recommends appropriate chart types and visualization patterns based on data characteristics
-- **Use Cases**: Interface design, User experience optimization, Accessibility auditing, System design, Architecture planning
+### Support
 
 ## 🎯 Agent Categories
 
 Our agents are organized into specialized categories:
 
-| Category | Agents | Focus Area |
-|----------|--------|------------|
-| **Research & Analysis** | Prompt Researcher, Crawler, Ui Architect Agent | Web crawling, data extraction, competitive analysis |
-| **Design & UX** | Agent Builder | Interface design, user experience, accessibility |
-| **Development** | *Coming Soon* | Code generation, architecture guidance, testing |
-| **Content & Communication** | *Coming Soon* | Content creation, documentation, technical writing |
+| Category                    | Agents                          | Focus Area                                          |
+| --------------------------- | ------------------------------- | --------------------------------------------------- |
+| **General**                 | Strategic, Support, Operational | Specialized domain expertise                        |
+| **Research & Analysis**     | _Coming Soon_                   | Web crawling, data extraction, competitive analysis |
+| **Design & UX**             | _Coming Soon_                   | Interface design, user experience, accessibility    |
+| **Development**             | _Coming Soon_                   | Code generation, architecture guidance, testing     |
+| **Content & Communication** | _Coming Soon_                   | Content creation, documentation, technical writing  |
+
 ## 📊 Agent Performance Metrics
 
 Each agent includes comprehensive performance tracking across standardized metrics:
 
 ### Core Performance Indicators
+
 - **Task Completion Rate**: Percentage of successfully completed tasks (Average: 94.2%)
 - **Response Times**: Average response time across all operations (Average: 4.3 seconds)
 - **Accuracy Scores**: Precision of outputs and recommendations (Average: 93.8%)
 - **User Satisfaction**: Feedback scores on recommendation quality (Average: 4.7/5.0)
 
 ### Specialized Metrics by Category
+
 - **Research Agents**: Source relevance (90%+), data accuracy (95%+), coverage completeness (88%+)
 - **Design Agents**: Accessibility compliance (95%+), design principle adherence (92%+), component usability (94%+)
 - **Development Agents**: Code generation success (98%+), standards compliance (100%), developer satisfaction (85%+)
 
 ### Quality Assurance Standards
+
 - **Compliance Standards**: 100% adherence to accessibility, security, and best practice guidelines
 - **Documentation Coverage**: Complete agents.md specifications and usage guides for all agents
 - **Test Coverage**: Comprehensive unit and integration test suites with 90%+ coverage
@@ -156,22 +147,25 @@ Each agent includes comprehensive performance tracking across standardized metri
 ### Quick Start
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/vbonk/app-agents.git
    cd app-agents
    ```
 
 2. **Set up the environment**:
+
    ```bash
    # Create virtual environment
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   
+
    # Install dependencies
    pip install -r requirements.txt
    ```
 
 3. **Initialize database** (for SaaS integration):
+
    ```bash
    # Set up PostgreSQL with pgvector
    # Configure DATABASE_URL environment variable
@@ -186,21 +180,23 @@ Each agent includes comprehensive performance tracking across standardized metri
    ```
 
 <<<<<<< HEAD
+
 ### Creating a New Agent
 
 1. **Use the Agent-Builder**:
+
    ```python
    from agents.agent_builder.src.enhanced_agent_builder import EnhancedAgentBuilder
-   
+
    builder = EnhancedAgentBuilder()
-   
+
    agent_spec = {
        "name": "my_new_agent",
        "description": "Description of my agent",
        "capabilities": ["research", "analysis"],
        "data_sources": ["web", "files"]
    }
-   
+
    result = await builder.execute_task({
        "type": "build",
        "specification": agent_spec
@@ -208,16 +204,18 @@ Each agent includes comprehensive performance tracking across standardized metri
    ```
 
 2. **Follow the generated structure**:
+
    - Complete the generated source code
    - Add comprehensive tests
    - Update documentation
    - Ensure compliance with standards
 
 3. **Validate the implementation**:
+
    ```bash
    # Run tests
    pytest agents/my_new_agent/tests/
-   
+
    # Check standards compliance
    python shared/tools/validate_agent.py agents/my_new_agent/
    ```
@@ -280,6 +278,7 @@ security:
 ### Agent-Specific Documentation
 
 Each agent includes:
+
 - **README.md**: Comprehensive usage guide and examples
 - **agents.md**: Detailed specification following industry standards
 - **API Documentation**: Complete function and method documentation
@@ -374,7 +373,7 @@ We welcome contributions to the app-agents repository. Please follow these guide
 
 This repository also includes backend services that support the functionality of the AI agents.
 
-* [Constitution Service](./services/constitution-service/README.md): Manages the constitutions that govern the behavior of AI agents.
+- [Constitution Service](./services/constitution-service/README.md): Manages the constitutions that govern the behavior of AI agents.
 
 ### Community Resources
 
@@ -387,4 +386,4 @@ This repository also includes backend services that support the functionality of
 
 **Built with ❤️ for the AI agent development community**
 
-*This repository represents the cutting edge of AI agent development, combining industry best practices with practical implementation patterns for enterprise-grade applications.*
+_This repository represents the cutting edge of AI agent development, combining industry best practices with practical implementation patterns for enterprise-grade applications._

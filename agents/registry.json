@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "version": "2.0.0",
+    "lastUpdated": "2025-01-21",
+    "databaseIntegration": {
+      "enabled": true,
+      "schema": "postgres-prisma",
+      "centralizedMemory": true,
+      "sharedToolRegistry": true,
+      "performanceTracking": true,
+      "learningPatterns": true
+    },
+    "framework": {
+      "baseClass": "enhanced_agent_base_postgres.py",
+      "deprecatedClass": "enhanced_agent_base.py",
+      "databaseClient": "shared/database/prisma_client.py",
+      "migrationStatus": "backward-compatible"
+    }
+  },
+  "agents": [
+    {
+      "slug": "crawler",
+      "displayName": "Crawler",
+      "category": "OPERATIONAL",
+      "path": "agents/operational/crawler",
+      "systemPrompt": "crawler-system-prompt.md",
+      "chatPrompt": "crawler-chat-prompt.md",
+      "description": "Web crawling and content extraction agent with intelligent quality scoring and dataset enrichment capabilities.",
+      "overview": "Fetches HTML from target URLs, extracts content using CSS selectors, and scores pages for quality and relevance based on keyword coverage and length.",
+      "capabilities": [
+        "web_crawling",
+        "content_extraction", 
+        "heuristic_analysis",
+        "dataset_enrichment",
+        "multi_source_research"
+      ],
+      "dataSources": [
+        "web",
+        "api"
+      ],
+      "databaseIntegration": {
+        "memoryEnabled": true,
+        "toolRegistry": true,
+        "performanceTracking": true,
+        "learningEnabled": true
+      },
+      "datasets": [
+        {
+          "name": "sample_crawl_database.xlsx",
+          "path": "docs/sample_crawl_database.xlsx",
+          "type": "xlsx"
+        }
+      ],
+      "useCases": [
+        "Web scraping",
+        "Data extraction",
+        "Competitive analysis",
+        "Content monitoring"
+      ],
+      "version": "2.0.0",
+      "status": "active"
+    },
+    {
+      "slug": "prompt-researcher",
+      "displayName": "Prompt Researcher", 
+      "category": "STRATEGIC",
+      "path": "agents/strategic/prompt-researcher",
+      "systemPrompt": "prompt-researcher-system-prompt.md",
+      "chatPrompt": "prompt-researcher-chat-prompt.md",
+      "description": "Sophisticated research automation system that conducts comprehensive multi-source research with advanced learning capabilities and persistent memory.",
+      "overview": "Combines intelligent data collection, persistent memory, and iterative improvement to provide high-quality research datasets and insights with cross-session learning.",
+      "capabilities": [
+        "multi_source_research",
+        "data_synthesis",
+        "memory_persistence",
+        "iterative_improvement",
+        "pattern_recognition"
+      ],
+      "dataSources": [
+        "web",
+        "database",
+        "api",
+        "files"
+      ],
+      "databaseIntegration": {
+        "memoryEnabled": true,
+        "toolRegistry": true,
+        "performanceTracking": true,
+        "learningEnabled": true
+      },
+      "datasets": [],
+      "useCases": [
+        "Research analysis",
+        "Data synthesis",
+        "Market research",
+        "Competitive intelligence",
+        "Academic research"
+      ],
+      "version": "2.0.0",
+      "status": "active"
+    },
+    {
+      "slug": "agent-builder",
+      "displayName": "Agent Builder",
+      "category": "SUPPORT",
+      "path": "agents/support/agent-builder",
+      "systemPrompt": "agent-builder-system-prompt.md",
+      "chatPrompt": "agent-builder-chat-prompt.md",
+      "description": "Meta-agent for creating new AI agents with standardized patterns, tool integration, and database connectivity.",
+      "overview": "Automates the creation of new agents following SaaS Ecosystem Architecture patterns with integrated database support and tool registry management.",
+      "capabilities": [
+        "agent_scaffolding",
+        "code_generation",
+        "pattern_application",
+        "tool_integration",
+        "database_schema_generation"
+      ],
+      "dataSources": [
+        "templates",
+        "schemas",
+        "documentation"
+      ],
+      "databaseIntegration": {
+        "memoryEnabled": true,
+        "toolRegistry": true,
+        "performanceTracking": true,
+        "learningEnabled": true
+      },
+      "datasets": [],
+      "useCases": [
+        "Agent development",
+        "Code scaffolding",
+        "Pattern enforcement",
+        "Tool integration",
+        "Framework extension"
+      ],
+      "version": "2.0.0",
+      "status": "active"
+    },
+    {
+      "slug": "ui-architect-agent",
+      "displayName": "UI Architect",
+      "category": "SUPPORT", 
+      "path": "agents/support/ui-architect-agent",
+      "systemPrompt": "ui-architect-agent-system-prompt.md",
+      "chatPrompt": "ui-architect-agent-chat-prompt.md",
+      "description": "Sophisticated AI assistant providing expert guidance on modern UI/UX design principles, patterns, and accessibility with evidence-based recommendations.",
+      "overview": "Built on comprehensive research from industry leaders, evaluates designs across eight critical dimensions and provides evidence-based recommendations for effective user interfaces.",
+      "capabilities": [
+        "ui_design_analysis",
+        "accessibility_auditing", 
+        "component_generation",
+        "design_evaluation",
+        "pattern_recommendation"
+      ],
+      "dataSources": [
+        "design_systems",
+        "ui_libraries",
+        "accessibility_guidelines"
+      ],
+      "databaseIntegration": {
+        "memoryEnabled": true,
+        "toolRegistry": true,
+        "performanceTracking": true,
+        "learningEnabled": true
+      },
+      "datasets": [],
+      "useCases": [
+        "Interface design",
+        "User experience optimization", 
+        "Accessibility auditing",
+        "System design",
+        "Architecture planning",
+        "Component library development"
+      ],
+      "version": "2.0.0",
+      "status": "active"
+    }
+  ],
+  "sharedComponents": {
+    "databaseClient": {
+      "path": "shared/database/prisma_client.py",
+      "description": "Centralized PostgreSQL client for agent data management",
+      "features": [
+        "Connection pooling",
+        "Memory management",
+        "Tool registry",
+        "Performance metrics",
+        "Learning patterns"
+      ]
+    },
+    "enhancedAgentBase": {
+      "path": "shared/templates/enhanced_agent_base_postgres.py", 
+      "description": "Modern agent base class with database integration",
+      "features": [
+        "Async initialization",
+        "Centralized memory",
+        "Tool management",
+        "Performance tracking",
+        "Learning loops"
+      ]
+    },
+    "legacySupport": {
+      "path": "shared/templates/enhanced_agent_base.py",
+      "status": "deprecated",
+      "description": "Legacy SQLite-based agent base (backward compatibility only)"
+    }
+  },
+  "migrationGuide": {
+    "fromSQLite": {
+      "steps": [
+        "Update imports to use enhanced_agent_base_postgres",
+        "Add async initialization with await agent.initialize()",
+        "Update AgentConfig to include category field",
+        "Configure DATABASE_URL and ORGANIZATION_ID environment variables",
+        "Install requirements-postgres.txt dependencies"
+      ],
+      "backwardCompatibility": true,
+      "deprecationWarnings": true
+    }
+  }
+}
