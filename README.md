@@ -103,14 +103,13 @@ This repository currently contains the following specialized AI agents:
 
 Our agents are organized into specialized categories:
 
-| Category                    | Agents                          | Focus Area                                          |
-| --------------------------- | ------------------------------- | --------------------------------------------------- |
-| **General**                 | Strategic, Support, Operational | Specialized domain expertise                        |
-| **Research & Analysis**     | _Coming Soon_                   | Web crawling, data extraction, competitive analysis |
-| **Design & UX**             | _Coming Soon_                   | Interface design, user experience, accessibility    |
-| **Development**             | _Coming Soon_                   | Code generation, architecture guidance, testing     |
-| **Content & Communication** | _Coming Soon_                   | Content creation, documentation, technical writing  |
-
+| Category | Agents | Focus Area |
+|----------|--------|------------|
+| **General** | Support, Strategic, Operational | Specialized domain expertise |
+| **Research & Analysis** | *Coming Soon* | Web crawling, data extraction, competitive analysis |
+| **Design & UX** | *Coming Soon* | Interface design, user experience, accessibility |
+| **Development** | *Coming Soon* | Code generation, architecture guidance, testing |
+| **Content & Communication** | *Coming Soon* | Content creation, documentation, technical writing |
 ## 📊 Agent Performance Metrics
 
 Each agent includes comprehensive performance tracking across standardized metrics:
